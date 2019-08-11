@@ -1,0 +1,16 @@
+version: '2'
+services:
+  mysql:
+    image: bitnami/mysql
+    volumes:
+      - 'db_data:/bitnami/mysql/data'
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_USER=group-user
+      - MYSQL_PASSWORD=group_password
+      - MYSQL_DATABASE=warehouse
+      - MYSQL_ROOT_PASSWORD=gr0up-&-p@ssw0rd
+volumes:
+  db_data:
+    driver: local
